@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -150,6 +151,9 @@ namespace MyPaint
         private void FillColor(Bitmap bitmap, int x, int y, Color oldColor, Color newColor)
         {
             Queue<Point> queue = new Queue<Point>();
+
+            if (newColor == oldColor)
+                return;
 
             queue.Enqueue(new Point(x, y));
 
