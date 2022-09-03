@@ -152,7 +152,7 @@ namespace MyPaint
         {
             Queue<Point> queue = new Queue<Point>();
 
-            if (newColor == oldColor)
+            if (newColor.ToArgb() == oldColor.ToArgb())
                 return;
 
             queue.Enqueue(new Point(x, y));
